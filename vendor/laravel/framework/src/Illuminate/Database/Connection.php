@@ -26,6 +26,7 @@ use Illuminate\Support\Traits\Macroable;
 use PDO;
 use PDOStatement;
 use RuntimeException;
+use Illuminate\Database\QueryException;
 
 class Connection implements ConnectionInterface
 {
@@ -1237,7 +1238,7 @@ class Connection implements ConnectionInterface
         if (is_null($this->doctrineConnection)) {
             $driver = $this->getDoctrineDriver();
 
-            $this->doctrineConnection = new DoctrineConnection(array_filter([
+            $this->doctrineConnection = new DoctrineConnection/*  */(array_filter([
                 'pdo' => $this->getPdo(),
                 'dbname' => $this->getDatabaseName(),
                 'driver' => $driver->getName(),
