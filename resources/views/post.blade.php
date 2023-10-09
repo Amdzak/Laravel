@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>AZK Blog | Post </title>
-    {{-- url di bawah sudah relatif terhadap folder public jadi tinggal ketik saja nama filenya  --}}
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1>Halaman Post</h1>
-    {{-- url di bawah sudah relatif terhadap folder public jadi tinggal ketik saja nama filenya  --}}
-    {{-- <script src="main.js"></script> --}}
-</body>
-</html>
+@extends('layouts.main')
+
+@section('content')
+    @foreach ($posts as $berita)
+        <article class="mb-4">
+            <a href="/posts/{{ $berita["slug"] }}"><h2>{{ $berita["judul"] }}</h2></a>
+            <h5>By: {{ $berita["author"] }}</h5>
+            <p>{{ $berita["content"] }}</p>
+        </article>
+    @endforeach
+@endsection

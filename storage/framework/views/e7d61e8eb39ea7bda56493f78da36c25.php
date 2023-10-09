@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>AZK Blog | Post </title>
-</head>
-<body>
-    <h1>Halaman Post</h1>
-</body>
-</html><?php /**PATH /media/ahmad/04B42BEAB42BDD44/ikal/POLINEMA/Pemrograman/Laravel/lat-wpu/resources/views/post.blade.php ENDPATH**/ ?>
+<?php $__env->startSection('content'); ?>
+    <?php $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $berita): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <article class="mb-4">
+            <a href="/posts/<?php echo e($berita["slug"]); ?>"><h2><?php echo e($berita["judul"]); ?></h2></a>
+            <h5>By: <?php echo e($berita["author"]); ?></h5>
+            <p><?php echo e($berita["content"]); ?></p>
+        </article>
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /media/ahmad/04B42BEAB42BDD44/ikal/POLINEMA/Pemrograman/Laravel/lat-wpu/resources/views/post.blade.php ENDPATH**/ ?>
