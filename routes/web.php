@@ -37,5 +37,5 @@ Route::get('about', function () {
 
 // MENGGUNAKAN CONTROLLER
 Route::get('blog',[PostsController::class,'index']);
-// hal post
-Route::get('posts/{slug}',[PostsController::class,"show"]);
+// hal post yang di query adlah slugnya karena ada simbol :
+Route::get('posts/{post:slug}',[PostsController::class,"show"]);

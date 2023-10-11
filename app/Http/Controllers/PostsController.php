@@ -15,10 +15,11 @@ class PostsController extends Controller
         ]);
     }
 
-    public function show($slug){
+    // menggunakan route model bindings tetapi di bagian routenya harus sama dalam penulisan varialbelnya
+    public function show(Posts $post){
         return view('posts',[
             "title" => "Single post",
-            "berita" => Posts::find($slug)
+            "berita" => $post,
         ]);
     }
 }

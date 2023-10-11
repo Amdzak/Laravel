@@ -1,7 +1,8 @@
 <?php $__env->startSection('content'); ?>
-    <h2> <?php echo e($berita["judul"]); ?></h2>
-    <h5> author: <?php echo e($berita["author"]); ?></h5>
-    <p> <?php echo e($berita["content"]); ?></p>
+    <h2> <?php echo e($berita->judul); ?></h2>
+    <h5> author: <?php echo e($berita->author); ?></h5>
+    
+     <?php echo $berita->content; ?> 
 
     <a href="/blog">Back to Blog</a>
 <?php $__env->stopSection(); ?>

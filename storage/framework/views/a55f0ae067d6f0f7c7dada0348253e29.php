@@ -10,10 +10,10 @@
             <a class="nav-link <?php echo e($title === "Home" ? 'active' : ''); ?>" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?php echo e($title === "About" ? 'active' : ''); ?>"  href="about">About</a>
+            <a class="nav-link <?php echo e($title === "About" ? 'active' : ''); ?>"  href="/about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?php echo e($title === "Blog" ? 'active' : ''); ?>" href="blog">Blog</a>
+            <a class="nav-link <?php echo e($title === "Blog" ? 'active' : ''); ?>" href="/blog">Blog</a>
           </li>
         </ul>
       </div>
