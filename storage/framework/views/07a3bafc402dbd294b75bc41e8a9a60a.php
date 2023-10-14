@@ -1,6 +1,6 @@
 <?php $__env->startSection('content'); ?>
     <h2> <?php echo e($berita->judul); ?></h2>
-    <h5> author: <?php echo e($berita->author); ?></h5>
+    <h6> By : <?php echo e($berita->author); ?> | category : <a href="/categories/<?php echo e($berita->category->slug); ?>"><?php echo e($berita->category->name); ?></a></h6>
     
      <?php echo $berita->content; ?> 
 

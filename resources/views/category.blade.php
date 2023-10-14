@@ -1,7 +1,8 @@
 @extends('layouts.main')
 
 @section('content')
-    @foreach ($posts as $berita)
+<h2>Post Category : {{ $title }}</h2>
+    @foreach ($post as $berita)
         <article class="mb-4">
             <a href="/posts/{{ $berita->slug }}"><h2>{{ $berita->judul }}</h2></a>
             {{-- <h5>By: {{ $berita->author }}</h5> --}}

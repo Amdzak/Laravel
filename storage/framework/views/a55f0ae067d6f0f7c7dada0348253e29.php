@@ -18,6 +18,4 @@
         </ul>
       </div>
     </div>
-</nav>
-
-<?php /**PATH /media/ahmad/04B42BEAB42BDD44/ikal/POLINEMA/Pemrograman/Laravel/lat-wpu/resources/views/layouts/navbar.blade.php ENDPATH**/ ?>
+  </nav><?php /**PATH /media/ahmad/04B42BEAB42BDD44/ikal/POLINEMA/Pemrograman/Laravel/lat-wpu/resources/views/layouts/navbar.blade.php ENDPATH**/ ?>

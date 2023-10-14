@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\PostsController;
-use Illuminate\Support\Facades\Route;
 use App\Models\Posts;
+use App\Models\Category;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,7 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('about', function () {
+Route::get('/about', function () {
     /*  penambahan parameter pada retunr view dapat di lakukan dengan tujuan untuk menampilkan data yang di inginkan
         hanya dengan menambahkan array assosiatif */ 
     return view('about',[
@@ -36,6 +37,23 @@ Route::get('about', function () {
 
 
 // MENGGUNAKAN CONTROLLER
-Route::get('blog',[PostsController::class,'index']);
+Route::get('/blog',[PostsController::class,'index']);
+
 // hal post yang di query adlah slugnya karena ada simbol :
-Route::get('posts/{post:slug}',[PostsController::class,"show"]);
+Route::get('/posts/{post:slug}',[PostsController::class,"show"]);
+
+Route::get("/categories",function(){
+    return view("categories",[
+        "title" => "Post Kategori",
+        "categories" => Category::all(),
+    ]);    
+});
+
+Route::get("/categories/{category:slug}",function(Category $category){
+    return view("category",[
+        "title" => $category->name,
+        "post" => $category->content,
+        "name" => $category->name,
+    ]);
+});
+

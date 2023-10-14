@@ -4,20 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Posts extends Model
 {
     use HasFactory;
-    // $fillable boleh di isi 
-    // protected $fillable = [
-    //     "judul",
-    //     "author",
-    //     "excerpt",
-    //     "content",
-    // ];
-
-    // hanya id saja yang tidak boleh di isi secara manual 
     protected $guarded = ["id"];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    } 
 }
 
 /* cara di bawah merupakan cara pengisian database dengan lebih mudah via tinker     
