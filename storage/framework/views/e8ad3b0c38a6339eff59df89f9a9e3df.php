@@ -3,7 +3,6 @@
     <?php $__currentLoopData = $post; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $berita): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <article class="mb-4">
             <a href="/posts/<?php echo e($berita->slug); ?>"><h2><?php echo e($berita->judul); ?></h2></a>
-            
             <p><?php echo e($berita->excerpt); ?></p>
         </article>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
