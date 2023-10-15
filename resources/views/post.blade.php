@@ -2,6 +2,7 @@
 @extends('layouts.main')
 
 @section('content')
+    <h2>{{ $title }}</h2>
     @foreach ($posts as $berita)
         <article class="mb-4 pb-3">
             <a class="text-decoration-none" href="/posts/{{ $berita->slug }}"><h2>{{ $berita->judul }}</h2></a>

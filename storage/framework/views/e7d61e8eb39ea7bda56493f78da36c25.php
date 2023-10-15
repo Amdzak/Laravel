@@ -1,4 +1,5 @@
 <?php $__env->startSection('content'); ?>
+    <h2><?php echo e($title); ?></h2>
     <?php $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $berita): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <article class="mb-4 pb-3">
             <a class="text-decoration-none" href="/posts/<?php echo e($berita->slug); ?>"><h2><?php echo e($berita->judul); ?></h2></a>

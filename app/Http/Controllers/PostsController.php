@@ -10,9 +10,11 @@ class PostsController extends Controller
 {
     public function index(){
         return view('post',[
-            "title" => "Blog",
+            "title" => "All Post",
             // "posts" => Posts::all()
-            "posts" => Posts::latest()->get()
+            // unutk menghindari n+1 problems yang mana memanggil banyak query tetapi yang di buthkan cuma 3 biji
+            // biasanya terjadi saat penggunaan looping EAGER LOADING
+            "posts" => Posts::with(["author","category"])->latest()->get()
         ]);
     }
 

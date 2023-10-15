@@ -51,16 +51,17 @@ Route::get("/categories",function(){
 });
 
 Route::get("/categories/{category:slug}",function(Category $category){
-    return view("category",[
-        "title" => $category->name,
-        "post" => $category->content,
-        "name" => $category->name,
+    return view("post",[
+        "title" => "Post By Category : $category->name",
+        "posts" => $category->content->load("author","category"), 
     ]);
 });
 
 Route::get("/authors/{author:username}",function(User $author){
     return view("post",[
-        "title" => "Author Post",
-        "posts" => $author->post,
+        "title" => "Post by Author: $author->name ",
+        // untuk menghindari n +1 problem jika menggunakan teknik route model binding
+        // hanya dengan menambahkan load() saja
+        "posts" => $author->post->load("category","author"),
     ]);
 });
