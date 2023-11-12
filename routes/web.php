@@ -57,6 +57,7 @@ Route::get("/categories",function(){
 
 Route::get("/login",[LoginController::class,"index"]);
 Route::get("/regristasi",[RegristerController::class,"index"]);
+Route::post("/regristasi",[RegristerController::class,"store"]);
 
 // TIDAK TERPAKAI
 
