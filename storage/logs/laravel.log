@@ -10424,3 +10424,11 @@ Did you mean one of these?
 [stacktrace]
 #0 {main}
 "} 
+[2023-11-12 04:12:42] local.ERROR: Cannot declare class App\Models\Posts, because the name is already in use {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot declare class App\\Models\\Posts, because the name is already in use at /media/amdzak/Amdzak/POLINEMA/Pemrograman/Laravel/lat-wpu/app/Models/Posts_old.php:14)
+[stacktrace]
+#0 {main}
+"} 
+[2023-11-12 04:13:39] local.ERROR: Cannot declare class App\Models\Posts, because the name is already in use {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot declare class App\\Models\\Posts, because the name is already in use at /media/amdzak/Amdzak/POLINEMA/Pemrograman/Laravel/lat-wpu/app/Models/Posts_old.php:14)
+[stacktrace]
+#0 {main}
+"} 
