@@ -53,9 +53,12 @@ Route::get("/categories",function(){
     ]);
 });
 
-Route::get("/categories/{category:slug}",function(Category $category){
+// TIDAK TERPAKAI
+
+/* Route::get("/categories/{category:slug}",function(Category $category){
     return view("post",[
         "title" => "Post By Category : $category->name",
+        "active" => "category",
         "posts" => $category->content->load("author","category"),
     ]);
 });
@@ -68,3 +71,4 @@ Route::get("/authors/{author:username}",function(User $author){
         "posts" => $author->post->load("category","author"),
     ]);
 });
+ */

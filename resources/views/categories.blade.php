@@ -7,7 +7,7 @@
         <div class="row">
             @foreach ($categories as $k)
                 <div class="col-md-4">
-                    <a class="text-decoration-none text-white " href="/categories/{{ $k->slug }}">
+                    <a class="text-decoration-none text-white " href="/blog?categories={{ $k->slug }}">
                         <div class="card text-bg-dark">
                             <img src="https://media.istockphoto.com/id/1459313027/photo/choose-the-correct-answer-on-the-exam-questionnaire-with-checkboxes-filling-survey-form-online.webp?b=1&s=170667a&w=0&k=20&c=eaPa1j0WF4FXPCVCf-Fhw8zWucHDOlDu3nmVDdDh144=" class="card-img">
                             <div class="card-img-overlay d-flex align-items-center p-0">
