@@ -20,15 +20,17 @@ use App\Http\Controllers\PostsController;
 // MENGGUNAKAN CLOSURE
 Route::get('/', function () {
     return view('home',[
-        "title" => "Home"
+        "title" => "Home",
+        "active" => "home"
     ]);
 });
 
 Route::get('/about', function () {
     /*  penambahan parameter pada retunr view dapat di lakukan dengan tujuan untuk menampilkan data yang di inginkan
-        hanya dengan menambahkan array assosiatif */ 
+        hanya dengan menambahkan array assosiatif */
     return view('about',[
         "title" => "About",
+        "active" => "about",
         "nama" => "Peach",
         "email" => "peach@mail.com",
         "addr" => "indonesia",
@@ -46,14 +48,15 @@ Route::get('/posts/{post:slug}',[PostsController::class,"show"]);
 Route::get("/categories",function(){
     return view("categories",[
         "title" => "Post Kategori",
+        "active" => "category",
         "categories" => Category::all(),
-    ]);    
+    ]);
 });
 
 Route::get("/categories/{category:slug}",function(Category $category){
     return view("post",[
         "title" => "Post By Category : $category->name",
-        "posts" => $category->content->load("author","category"), 
+        "posts" => $category->content->load("author","category"),
     ]);
 });
 
