@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Models\Posts;
 use App\Models\Category;
 use App\Models\User;
@@ -7,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegristerController;
+use League\CommonMark\Extension\SmartPunct\DashParser;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,9 +57,14 @@ Route::get("/categories",function(){
     ]);
 });
 
-Route::get("/login",[LoginController::class,"index"]);
+Route::get("/login",[LoginController::class,"index"])->middleware("guest")->name("login");
+Route::post("/login",[LoginController::class,"login"]);
+Route::post("/logout",[LoginController::class,"logout"]);
+
 Route::get("/regristasi",[RegristerController::class,"index"]);
 Route::post("/regristasi",[RegristerController::class,"store"]);
+
+Route::get("/dashboard", [DashboardController::class,"index"])->middleware("auth");
 
 // TIDAK TERPAKAI
 
