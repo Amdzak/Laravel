@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
-use App\Models\Posts;
+use App\Http\Controllers\DashboardPostsController;
 use App\Models\Category;
+use App\Models\Posts;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
@@ -64,7 +64,13 @@ Route::post("/logout",[LoginController::class,"logout"]);
 Route::get("/regristasi",[RegristerController::class,"index"]);
 Route::post("/regristasi",[RegristerController::class,"store"]);
 
-Route::get("/dashboard", [DashboardController::class,"index"])->middleware("auth");
+Route::get("/dashboard",function(){
+    return view("dashboard.index");
+})->middleware("auth");
+
+
+// RESOURCE CONTORLLER membuat dengan php artisan make:controller namaKontroller --resource
+Route::resource("/dashboard/posts", DashboardPostsController::class)->middleware("auth");
 
 // TIDAK TERPAKAI
 

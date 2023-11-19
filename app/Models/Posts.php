@@ -62,6 +62,10 @@ class Posts extends Model
     public function author(){
         return $this->belongsTo(User::class,"user_id");
     }
+
+    public function getRouteKeyName(): string{
+        return 'slug';
+    }
 }
 
 /* cara di bawah merupakan cara pengisian database dengan lebih mudah via tinker

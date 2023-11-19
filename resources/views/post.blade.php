@@ -50,7 +50,7 @@
                             <h5 class="card-title">{{ $berita->judul }}</h5>
                             <small class="text-muted card-text">
                                 Last updated {{ $berita->created_at->diffForHumans() }}
-                                <h6> By : <a class="text-decoration-none" href="/blog?authors={{ $berita->author->username }}">{{ $berita->author->name }}</a></h6>
+                                <h6> By : <a class="text-decoration-none" href="/blog?authors={{ $berita->author->username }}">{{ $berita->author->username }}</a></h6>
                             </small>
                             <p class="card-text">{{ $berita->excerpt }}</p>
                             <a href="/posts/{{ $berita->slug }}" class="btn btn-primary">Read more..</a>
@@ -63,6 +63,6 @@
 
     @else
         <p class="text-center fs-4">Postingan Tidak Ada</p>
-    @endif
 {{ $posts->links() }}
+    @endif
 @endsection

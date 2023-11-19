@@ -1,1 +1,5 @@
-<h1>HALOO SELAMAT DATANG</h1>
+@extends('dashboard.master')
+
+@section('content')
+    <h1 class="h2">Welcome Back {{ auth()->user()->username }}</h1>
+@endsection
